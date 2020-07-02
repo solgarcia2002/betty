@@ -1,0 +1,40 @@
+.UserData {
+  flex: 3;
+  display: inline-flex;
+  align-items : flex-end;
+  justify-content: space-around;
+  .Data{
+    flex: 7;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .Data, .Avatar{
+    margin-left: auto;
+    color:#c0c0c0;
+    .UserName{
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+    .Credits{
+      color:#69caa4;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .UserData {
+    display:flex ;
+    flex:2;
+    justify-content: space-between;
+    .Avatar{
+      flex:1;
+    }
+    .Data{
+      flex:2;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
