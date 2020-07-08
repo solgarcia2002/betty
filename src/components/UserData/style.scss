@@ -1,3 +1,5 @@
+@import '../../styles/styles';
+
 .UserData {
   flex: 3;
   display: inline-flex;
@@ -12,7 +14,7 @@
   }
   .Data, .Avatar{
     margin-left: auto;
-    color:#c0c0c0;
+    color:$FontLightColor;
     .UserName{
       font-weight: bold;
       font-size: 1.2rem;

@@ -1,0 +1,12 @@
+@import '../../styles/styles';
+.Match {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  .vs{
+    font-size: 2rem;
+    font-weight: bold;
+    color:$FontLightColor;
+  }
+}

@@ -1,9 +1,11 @@
+@import '../../styles/styles';
 body, .app{
   display: flex;
   width: 100%;
+  background: $LightBackground;
 }
 .app{
-  :first-child {
+  > div {
     width: 100%;
   }
 }
