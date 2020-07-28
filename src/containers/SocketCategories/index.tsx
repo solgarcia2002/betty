@@ -7,9 +7,6 @@ interface DispatchProps {
 }
 
 export default class SocketCategories extends React.Component<DispatchProps, {}> {
-    constructor(props: any) {
-        super(props);
-    }
 
     render() {
         if (this.props.categories) {
@@ -17,7 +14,7 @@ export default class SocketCategories extends React.Component<DispatchProps, {}>
                 <div className="SocketCategories">
                     {
                         this.props.categories.map((cat, index) => {
-                            return <Category category={cat}/>
+                            return <Category category={cat} key={index}/>
                         })}
                 </div>
             )

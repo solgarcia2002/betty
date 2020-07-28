@@ -3,9 +3,6 @@ import './style.scss';
 import Player from '../../components/Player/index';
 
 export default class Match extends React.Component<any,any> {
-    constructor(porps:any){
-        super(porps);
-    }
     onSelectPlayer(playerId:any){
         console.log(playerId)
     }

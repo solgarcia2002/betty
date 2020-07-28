@@ -19,6 +19,12 @@
       font-weight: bold;
       font-size: 1.2rem;
       margin-left: 1rem;
+      a{
+        color: #a5a9ab;
+        &:hover{
+          color:#ffff00;
+        }
+      }
     }
     .Credits{
       color:#69caa4;

@@ -4,10 +4,11 @@ import './index.scss';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import configureStore, { history } from './store';
+import createStore from './store';
+import * as createHistory from 'history';
 
-const store = configureStore();
-
+const history = createHistory.createHashHistory();
+const store = createStore(history);
 ReactDOM.render(
   <div className={'app'}>
     <Provider store={store}>

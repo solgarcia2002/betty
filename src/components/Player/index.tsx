@@ -1,14 +1,8 @@
 import './style.scss';
 import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
-import grey from "@material-ui/core/colors/grey";
-
-const primary = grey[500];
 
 export default class Player extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-    }
 
     render() {
         return (
