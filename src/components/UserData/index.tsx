@@ -13,7 +13,7 @@ export default class UserData extends React.Component <any, any> {
             <div className={'UserData'}>
                 <div className={'Data'}>
                     <label className={'CreditsLabel'}>Creditos <span className={'Credits'}>1255</span></label>
-                    <label className={'UserName'}> <a href={'/'} onClick={this.openLogin}>Login</a></label>
+                    <label className={'UserName'}> <a href={'#'} onClick={this.openLogin}>Login</a></label>
                 </div>
                 <Avatar/>
             </div>

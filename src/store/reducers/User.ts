@@ -4,14 +4,11 @@ import {OPEN_LOGIN} from '../actions/AOpenLogin';
 */
 const actions = {
 
-    [OPEN_LOGIN]: (state: any, action: any) => {
-        console.log(state);
-        return {...state, openLogin: action.payload};
-    },
+    [OPEN_LOGIN]: (state: any, action: any) => ( {...state, showLogin: action.payload}),
 };
 
 const initState = {
-    openLogin: false
+    showLogin: false
 };
 
 export default (state : any = initState, action: any): any => {

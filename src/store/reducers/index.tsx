@@ -12,7 +12,6 @@ export const history = createBrowserHistory();
 * Place all your reducers here
 */
 export default combineReducers({
-
     User,
     router: connectRouter(history)
 });

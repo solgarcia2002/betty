@@ -58,8 +58,8 @@ const mapStateToProps = (state: any) => {
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-    openLogin: function () {
-        dispatch(AOpenLogin());
+    openLogin: function (data:boolean) {
+        dispatch(AOpenLogin(data));
     }
 });
 

@@ -44,7 +44,8 @@ export default class Login extends React.Component<any, any> {
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button color="primary">
+                        <Button color="primary"
+                        onClick={this.props.closeLogin}>
                             Cancel
                         </Button>
                         <Button color="primary">
