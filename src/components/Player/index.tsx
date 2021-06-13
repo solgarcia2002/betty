@@ -1,17 +1,30 @@
 import './style.scss';
 import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 export default class Player extends React.Component<any, any> {
 
     render() {
+        let disableBet:boolean = false;
+        let checkboxColor:object = {
+            color:"#FF00FF"
+        };
+        if(!this.props.user){
+            disableBet = true;
+            checkboxColor = {
+                color:"#DDD"
+            };
+        }
         return (
             <div className={'Player'}>
                 <div className={'check'}>
-                    <Checkbox color='primary'
-                              style={{
-                                  color: "#00e676",
-                              }}/>
+                    <FormControlLabel
+                        disabled={ disableBet }
+                        control={<Checkbox color='primary' style={checkboxColor}/>}
+                        label=''
+                        >
+                    </FormControlLabel>
                     <img
                         draggable={false}
                         alt={'logo'}

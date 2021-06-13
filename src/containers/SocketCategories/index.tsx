@@ -1,26 +1,21 @@
 import * as React from 'react';
-import './style.scss';
+import {SocketCategory} from './style';
 import Category from '../../components/Category/index';
 
 interface DispatchProps {
     categories: Array<any>,
 }
 
-export default class SocketCategories extends React.Component<DispatchProps, {}> {
-
-    render() {
-        if (this.props.categories) {
-            return (
-                <div className="SocketCategories">
-                    {
-                        this.props.categories.map((cat, index) => {
-                            return <Category category={cat} key={index}/>
-                        })}
-                </div>
-            )
-        }
-        else {
-            return null
-        }
+const SocketCategories = (props: DispatchProps) => {
+    if (props.categories) {
+        return (
+            <SocketCategory>
+                {props.categories.map((cat, index) => <Category category={cat} key={index}/>)}
+            </SocketCategory>
+        )
+    }
+    else {
+        return null
     }
 }
+export default SocketCategories

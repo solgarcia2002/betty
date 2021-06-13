@@ -1,16 +1,19 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import UserData from '../../components/UserData/index';
-import Login from '../../components/Login/index';
-import './style.scss';
+import Login from '../../containers/LoginService/index';
+import {HeaderLogoStyled,HeaderStyled} from './style';
 import AOpenLogin from "../../store/actions/AOpenLogin";
 import {Modal} from '@material-ui/core';
-import {debug} from "util";
-
 
 class HeaderLogo extends React.Component <any, any> {
     OpenLogin() {
         this.props.openLogin(true);
+        return false;
+    }
+
+    OpenUserMenu() {
+        console.log('user menu');
         return false;
     }
     handleClose (){
@@ -21,18 +24,22 @@ class HeaderLogo extends React.Component <any, any> {
     render() {
         const open:boolean = this.props.showLogin;
         const openLogin = this.OpenLogin.bind(this);
+        const openUserMenu = this.OpenUserMenu.bind(this);
         const handleClose = this.handleClose.bind(this);
         return (
-            <div className="Header">
-                <div className={'HeaderLogo'}>
+            <HeaderStyled>
+                <HeaderLogoStyled>
                     <img
                         draggable={false}
                         alt={'logo'}
                         src={require('../../assets/logo.svg')}
                     />
-                </div>
+                </HeaderLogoStyled>
                 <UserData
-                    openLogin={openLogin}/>
+                    openLogin={openLogin}
+                    openUserMenu={openUserMenu}
+                    user={this.props.user}
+                />
                 <Modal
                     open={open}
                     onClose={handleClose}
@@ -40,10 +47,10 @@ class HeaderLogo extends React.Component <any, any> {
                     aria-describedby="simple-modal-description"
                 >
                     <Login
-                    closeLogin={handleClose}/>
+                    //closeLogin={handleClose}
+                    />
                 </Modal>
-            </div>
-
+            </HeaderStyled>
         )
     }
 }
@@ -51,9 +58,8 @@ class HeaderLogo extends React.Component <any, any> {
 const mapStateToProps = (state: any) => {
     return {
         showLogin: state.User.showLogin,
-        user: state.User
+        user: state.User.data
     };
-
 };
 
 const mapDispatchToProps = (dispatch: any) => ({

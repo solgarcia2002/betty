@@ -12,15 +12,16 @@
     justify-content: flex-end;
     align-items: flex-end;
   }
-  .Data, .Avatar{
-    margin-left: auto;
-    color:$FontLightColor;
+  .Data, .Avatar {
+    color: $FontLightColor;
+    margin: 0 1rem 0 auto;
     .UserName{
       font-weight: bold;
       font-size: 1.2rem;
-      margin-left: 1rem;
+      margin: 0 1rem;
       a{
         color: #a5a9ab;
+        text-decoration: none;
         &:hover{
           color:#ffff00;
         }

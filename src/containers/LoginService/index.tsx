@@ -3,20 +3,24 @@ import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../../firebase';
-import './style.scss';
 import Login from "../../components/Login";
 import {connect} from 'react-redux';
 import {compose} from 'recompose';
 import AOpenLogin from "../../store/actions/AOpenLogin";
-
+import ASetUser from "../../store/actions/ASetUser";
+import {DialogContent} from "@material-ui/core";
 
 interface DispatchProps {
-    user: any
+    user: any,
+    signInWithGoogle: any,
+    openLogin: any,
+    setUser: any,
 }
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-class LoginService extends React.Component<any, any> {
+class LoginService extends React.Component<DispatchProps> {
+
     constructor(props: any) {
         super(props);
         // this.open = this.props.openLogin;
@@ -29,17 +33,37 @@ class LoginService extends React.Component<any, any> {
     };
 
     handleClose = () => {
-        //this.setOpen(false);
+        this.props.openLogin(false);
     };
 
+    handleSignInWithGoogle() {
+
+        this.props.signInWithGoogle()
+        console.log('USER', this.props.user)
+        const userData = {
+            email: this.props.user.email,
+            name: this.props.user.displayName,
+            photoURL: this.props.user.photoURL
+        };
+        this.props.setUser(userData);
+        this.props.openLogin(false);
+    }
+
     render() {
-        const {user, signOut, signInWithGoogle} = this.props;
+        const handleClose = this.handleClose.bind(this);
+        const handleClickOpen = this.handleClickOpen.bind(this);
+        const handleSignInWithGoogle = this.handleSignInWithGoogle.bind(this);
 
         return (
-            <div>
-                <Login
-                    handleClickOpen={this.handleClickOpen}/>
-            </div>
+            <DialogContent>
+                <div>
+                    <Login
+                        closeLogin={handleClose}
+                        handleClickOpen={handleClickOpen}
+                        signInWithGoogle={handleSignInWithGoogle}
+                    />
+                </div>
+            </DialogContent>
         );
 
     }
@@ -51,15 +75,18 @@ const providers = {
 }
 const mapStateToProps = (state: any) => {
     return {
-        user: state.User
+        stateUser: state.User
     };
 
 };
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-    openLogin: function (data:boolean) {
+    openLogin: function (data: boolean) {
         dispatch(AOpenLogin(data));
+    },
+    setUser: function (data: object) {
+        dispatch(ASetUser(data));
     }
 });
 

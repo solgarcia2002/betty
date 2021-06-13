@@ -32,7 +32,7 @@ export default class Login extends React.Component<any, any> {
                     <DialogTitle id="form-dialog-title">Login</DialogTitle>
                     <DialogContent>
                         <DialogContentText>
-                            Lala
+                            Logueate para disfrutar de Betty ;)
                         </DialogContentText>
                         <TextField
                             autoFocus
@@ -48,7 +48,8 @@ export default class Login extends React.Component<any, any> {
                         onClick={this.props.closeLogin}>
                             Cancel
                         </Button>
-                        <Button color="primary">
+                        <Button color="primary"
+                        onClick={this.props.signInWithGoogle}>
                             Login with Google
                         </Button>
                     </DialogActions>

@@ -1,14 +1,17 @@
 import {OPEN_LOGIN} from '../actions/AOpenLogin';
+import {SET_USER} from '../actions/ASetUser';
 /*
 *
 */
 const actions = {
 
     [OPEN_LOGIN]: (state: any, action: any) => ( {...state, showLogin: action.payload}),
+    [SET_USER]: (state: any, action: any) => ( {...state, data: action.payload}),
 };
 
 const initState = {
-    showLogin: false
+    showLogin: false,
+    data: null,
 };
 
 export default (state : any = initState, action: any): any => {
