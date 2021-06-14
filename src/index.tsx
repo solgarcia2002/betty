@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import createStore from './store';
 import * as createHistory from 'history';
+import {AppStyled} from './style'
 
 const history = createHistory.createHashHistory();
 const store = createStore(history);
 ReactDOM.render(
-  <div className={'app'}>
+  <AppStyled>
     <Provider store={store}>
       <App history={history} />
     </Provider>
-  </div>,
+  </AppStyled>,
   document.getElementById('root')
 );
 
