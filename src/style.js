@@ -4,8 +4,6 @@ export const AppStyled = styled.div`
 background-color:${LightBackground};
 width:100%;
 display:flex;
-margin:0;
-body{
-  margin:0;
-}
+margin:0 !important;
+
 ` ;
