@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Avatar } from '@material-ui/core';
-import {DataStyled,UserDataStyled , UserNameStyled, CreditsStyled} from './style';
+import {DataStyled,UserDataStyled , UserNameStyled, CreditsStyled, AvatarStyled} from './style';
 
 export default class UserData extends React.Component <any, any> {
     openLogin: any;
@@ -29,7 +28,7 @@ export default class UserData extends React.Component <any, any> {
                     </label>
                     <UserNameStyled> {loginLink}</UserNameStyled>
                 </DataStyled>
-                <Avatar alt={name} src={image} />
+                <AvatarStyled alt={name} src={image} />
             </UserDataStyled>
         );
     }

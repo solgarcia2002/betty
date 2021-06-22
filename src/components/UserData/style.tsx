@@ -1,5 +1,7 @@
+import  React from 'react';
 import styled from 'styled-components';
 import {FontLightColor} from '../../styles/configStyles'
+import {Avatar} from '@material-ui/core';
 export const UserDataStyled = styled.div`
   flex: 3;
   display: inline-flex;
@@ -35,9 +37,9 @@ export const UserNameStyled = styled.span`
     &:hover{
       color:#ffff00;
     }
-  }
-` ;
+  }` ;
 
 export const CreditsStyled = styled.span`
   color:#69caa4;`;
 
+export const AvatarStyled =styled((props)=> <Avatar {...props} />)`margin-right:1rem;`;
