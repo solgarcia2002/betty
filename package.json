@@ -20,7 +20,7 @@
     "@types/react-router-redux": "^5.0.18",
     "@types/recompose": "^0.30.7",
     "@types/styled-components": "^5.1.10",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "connected-react-router": "^6.3.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
